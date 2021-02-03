@@ -15,13 +15,13 @@ body{
     height: 90%;
 }
 
-.wrapper *, nav{
+/* .wrapper *, nav{
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 20px;
     padding: 5px;
-}
+} */
 
 .navbar {
     border: 1px solid black;
@@ -39,6 +39,10 @@ body{
     border: 1px solid black;
     margin-left: 0;
     margin-right: 0;
+}
+
+.nameFolder {
+    text-decoration: none;
 }
 
 .wrapper-info{
