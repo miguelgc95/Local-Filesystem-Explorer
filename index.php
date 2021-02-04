@@ -6,6 +6,7 @@
     <title>File system manager</title>
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
 </head>
 <body>
     <nav class="navbar">
