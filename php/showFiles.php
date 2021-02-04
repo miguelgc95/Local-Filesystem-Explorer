@@ -4,7 +4,6 @@
         $root = getcwd() . "/root";
         $folder = scandir($root);
     } else {
-        var_dump(urldecode($_GET['dir']));
         $aux = urldecode($_GET['dir']);
         $dir = getcwd() . '/root'. $_GET['dir'];
         $folder = scandir($dir);
