@@ -1,9 +1,10 @@
 <?php
 
-$rp = json_decode(file_get_contents('php://input'), true);
+    $rp = json_decode(file_get_contents('php://input'), true);
 
-//echo count($rp);
-foreach($rp as $key => $value){
-    echo $key . " " . $value;
-}
+    $thePath = "../root/" . urldecode($rp[query]) . "/" . $rp[newName];
+    $mybool = mkdir($thePath);
+
+    // header('Location: '"./".index.php);
+    // die();
 ?>

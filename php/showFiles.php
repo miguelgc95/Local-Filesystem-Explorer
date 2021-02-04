@@ -3,6 +3,7 @@
     if(empty($_GET['dir'])) {
         $root = getcwd() . "/root";
         $folder = scandir($root);
+        $aux = '';
     } else {
         $aux = urldecode($_GET['dir']);
         $dir = getcwd() . '/root'. $_GET['dir'];
