@@ -57,6 +57,10 @@ nav {
     width: 61%;
     text-align: left;
     margin-left: 10px;
+    color: black;
+}
+.nameFolder:focus {
+    color: black;
 }
 .icon, .icon2 {
     width: 13%;

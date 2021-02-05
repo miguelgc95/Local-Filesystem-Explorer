@@ -17,7 +17,7 @@
         </aside>
         <section class="wrapper-main">
         <?php
-        require('./php/showFiles.php');
+            require('./php/showFiles.php');
         ?>
         </section>
         <aside class="wrapper-info">
