@@ -64,6 +64,7 @@ nav {
 }
 .icon, .icon2 {
     width: 13%;
+    cursor: pointer;
 }
 .fa-folder {
     font-size: 40px;
