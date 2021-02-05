@@ -5,7 +5,6 @@
         $folder = scandir($root);
         $aux = '';
     } else {
-        /* var_dump(urldecode($_GET['dir'])); */
         $aux = urldecode($_GET['dir']);
         $dir = getcwd() . '/root'. $_GET['dir'];
         $folder = scandir($dir);
@@ -21,13 +20,11 @@
     }
 
     function printMain($folder, $queryParam) {
-        /* echo '$folder ' . $folder;
-        echo '<br>';
-        echo '$queryParam' . $queryParam;
-        echo '<br>'; */
-        changeIcons($folder);
+
+        $typeIcon = changeIcons($folder);
+
         echo '<section class="showedFolder">'
-                . '<p class="icon">' . '<i class="fas fa-folder"></i>' . '</p>' . "\n"
+                . $typeIcon
                 . '<a class="nameFolder" href=?dir=' . $queryParam . '>' . '<h2>' . $folder .  '</h2>' . '</a>' . "\n"
                 . '<p class="icon2">' . '<i class="fas fa-edit"></i>' . '</p>' . "\n"
                 . '<p class="icon2">' . '<i class="fas fa-backspace"></i>' . '</p>' . "\n"
@@ -35,40 +32,65 @@
     }
 
     function changeIcons($folder) {
-        echo '$folder ' . $folder;
-        echo '<br>';
 
-        switch($extension) {
+        $ext = isFileOrFolder($folder);
+
+        switch($ext) {
             case '':
-                '<p class="icon">' . '<i class="fas fa-folder"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-folder"></i>' . '</p>';
+                break;
             case 'doc':
-                '<p class="icon">' . '<i class="fas fa-file-word"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-word"></i>' . '</p>';
+                break;
             case 'odt':
-                '<p class="icon">' . '<i class="fas fa-file-word"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-word"></i>' . '</p>';
+                break;
             case 'exe':
-                '<p class="icon">' . '<i class="fas fa-file-excel"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-excel"></i>' . '</p>';
+                break;
             case 'svg':
-                '<p class="icon">' . '<i class="fas fa-file-excel"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-excel"></i>' . '</p>';
+                break;
             case 'zip':
-                '<p class="icon">' . '<i class="fas fa-file-archive"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-archive"></i>' . '</p>';
+                break;
             case 'rar':
-                '<p class="icon">' . '<i class="fas fa-file-archive"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-archive"></i>' . '</p>';
+                break;
             case 'csv':
-                '<p class="icon">' . '<i class="fas fa-file-csv"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-csv"></i>' . '</p>';
+                break;
             case 'jpg':
-                '<p class="icon">' . '<i class="fas fa-file-image"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-image"></i>' . '</p>';
+                break;
             case 'png':
-                '<p class="icon">' . '<i class="fas fa-file-image"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-image"></i>' . '</p>';
+                break;
             case 'txt':
-                '<p class="icon">' . '<i class="fas fa-file-alt"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-alt"></i>' . '</p>';
+                break;
             case 'ppt':
-                '<p class="icon">' . '<i class="fas fa-file-powerpoint"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-powerpoint"></i>' . '</p>';
+                break;
             case 'pdf':
-                '<p class="icon">' . '<i class="fas fa-file-pdf"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-pdf"></i>' . '</p>';
+                break;
             case 'mp3':
-                '<p class="icon">' . '<i class="fas fa-file-audio"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-audio"></i>' . '</p>';
+                break;
             case 'mp4':
-                '<p class="icon">' . '<i class="fas fa-file-video"></i>' . '</p>';
+                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-video"></i>' . '</p>';
+                break;
         }
+        return $typeIcon;
     }
-?>
+
+    function isFileOrFolder($folder) {
+
+        if(str_contains($folder, '.') !== true ) {
+            $extension = '';
+        } else {
+            $extension = pathinfo($folder, PATHINFO_EXTENSION);
+        }
+        return $extension;
+    }
