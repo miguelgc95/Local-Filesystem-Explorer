@@ -1,6 +1,7 @@
 <?php
 
 if(!empty($_GET['dir'])) {
+    
     $myquery =urlencode($_GET['dir']);
 }else{
     $myquery = '';
