@@ -9,10 +9,21 @@ body{
     height: 100%
 }
 
+nav {
+    margin-top: 20px;
+}
+
+.navbar {
+    border: 1px solid black;
+    height: 10%;
+    margin-bottom: 0;
+}
+
 .wrapper{
     display: flex;
     width: 100%;
     height: 90%;
+    margin-bottom: 20px;
 }
 
 /* .wrapper *, nav{
@@ -22,12 +33,6 @@ body{
     margin: 20px;
     padding: 5px;
 } */
-
-.navbar {
-    border: 1px solid black;
-    height: 10%;
-    margin-bottom: 0;
-}
 
 .wrapper-tree{
     width: 25%;
@@ -41,8 +46,32 @@ body{
     margin-right: 0;
 }
 
+.showedFolder {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+}
 .nameFolder {
     text-decoration: none;
+    width: 61%;
+    text-align: left;
+    margin-left: 10px;
+    color: black;
+}
+.nameFolder:focus {
+    color: black;
+}
+.icon, .icon2 {
+    width: 13%;
+    cursor: pointer;
+}
+.fa-folder {
+    font-size: 40px;
+}
+.icon2 {
+    background: none;
+    align-self: center;
 }
 
 .wrapper-info{
