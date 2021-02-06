@@ -1,4 +1,5 @@
 document.getElementById("new-folder").addEventListener("blur", request);
+document.getElementById("upload-file").addEventListener("change", upload);
 
 function request() {
     var whereToSave = document.getElementById("new-folder").getAttribute("query");
@@ -14,4 +15,8 @@ function request() {
     }).catch(error => {
         console.log(error);
     })
+}
+
+function upload() {
+    document.getElementById("upload-form").submit();
 }
