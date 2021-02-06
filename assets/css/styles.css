@@ -76,3 +76,12 @@ nav {
     width: 25%;
     border: 1px solid black;
 }
+
+.hide-border{
+    border: none;
+}
+
+.form-display{
+    display: flex;
+    align-items: center;
+}
