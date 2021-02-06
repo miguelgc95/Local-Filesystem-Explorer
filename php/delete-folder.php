@@ -1,21 +1,8 @@
 <?php
 
-$parentdec = urldecode($_POST["parent"]);
-$parentundec = $_POST["parent"];
 $semiPath = urldecode($_POST["semiPath"]);
-
 $dir = "../root$semiPath";
-
-echo $parentundec;
-echo "<br>";
-echo $parentdec;
-$parent = "..$parentundec";
-
-echo "<br>";
-echo "<br>";
-echo $_SERVER["DOCUMENT_ROOT"];
-
-$joder = "/Local-Filesystem-Explorer/?dir=" . $parentundec;
+$parent = "/Local-Filesystem-Explorer/?dir=" . $_POST["parent"];
 
 rrmdir($dir);
 function rrmdir($dir)
@@ -38,5 +25,5 @@ function rrmdir($dir)
     }
 }
 
-header('Location: '.$joder);
+header('Location: '.$parent);
 die();

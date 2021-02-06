@@ -10,10 +10,6 @@ if (empty($_GET['dir'])) {
     $folder = scandir($dir);
 }
 
-echo $dir;
-echo "<br>";
-echo $aux;
-
 $foldercount = count($folder);
 for ($i = 0; $i < $foldercount; $i++) {
     if ($folder[$i] != '.' && $folder[$i] != '..') {
