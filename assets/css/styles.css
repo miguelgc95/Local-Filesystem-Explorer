@@ -82,3 +82,8 @@ nav {
 .hide-border{
     border: none;
 }
+
+.form-display{
+    display: flex;
+    align-items: center;
+}
