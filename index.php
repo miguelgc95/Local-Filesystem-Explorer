@@ -13,9 +13,10 @@
 <body>
     <nav class="navbar">
         <?php
+            require('./php/searcher.php');
             require('./php/newFolderButton.php');
+            require('./php/uploadFileButton.php');
         ?>
-        searcher
     </nav>
     <section class="wrapper">
         <aside class="wrapper-tree">
