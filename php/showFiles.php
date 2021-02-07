@@ -37,49 +37,49 @@
 
         switch($ext) {
             case '':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-folder"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-folder"></i>' . '</div>';
                 break;
             case 'doc':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-word"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-word"></i>' . '</div>';
                 break;
             case 'odt':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-word"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-word"></i>' . '</div>';
                 break;
             case 'exe':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-excel"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-excel"></i>' . '</div>';
                 break;
             case 'svg':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-excel"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-excel"></i>' . '</div>';
                 break;
             case 'zip':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-archive"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-archive"></i>' . '</div>';
                 break;
             case 'rar':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-archive"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-archive"></i>' . '</div>';
                 break;
             case 'csv':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-csv"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-csv"></i>' . '</div>';
                 break;
             case 'jpg':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-image"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-image"></i>' . '</div>';
                 break;
             case 'png':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-image"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-image"></i>' . '</div>';
                 break;
             case 'txt':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-alt"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-alt"></i>' . '</div>';
                 break;
             case 'ppt':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-powerpoint"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-powerpoint"></i>' . '</div>';
                 break;
             case 'pdf':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-pdf"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-pdf"></i>' . '</div>';
                 break;
             case 'mp3':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-audio"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-audio"></i>' . '</div>';
                 break;
             case 'mp4':
-                $typeIcon = '<p class="icon">' . '<i class="fas fa-file-video"></i>' . '</p>';
+                $typeIcon = '<div class="icon">' . '<i class="fas fa-file-video"></i>' . '</div>';
                 break;
         }
         return $typeIcon;
