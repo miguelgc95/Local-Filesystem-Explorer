@@ -14,13 +14,17 @@
 </head>
 <body>
     <nav class="navbar">
-        searcher
+        <?php
+            require('./php/defineDir.php');
+            require('./php/searcher.php');
+        ?>
     </nav>
     <section class="wrapper">
         <aside class="wrapper-tree">
-        <?php
-            require('./php/newFolderButton.php');
-        ?>
+            <?php
+                require('./php/newFolderButton.php');
+                require('./php/uploadFileButton.php');
+            ?>
         </aside>
         <section class="wrapper-main">
         <?php

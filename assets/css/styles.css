@@ -8,7 +8,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-image: url("./img/background.jpg");
+    background-image: url("./img/background.png");
     background-size: 100%;
 }
 
@@ -16,12 +16,21 @@ nav {
     margin-top: 20px;
     padding: 10px;
     justify-content: center;
+    text-align: center;
 }
 
 .navbar {
     border: 1px solid white;
     height: 10%;
     margin-bottom: 0;
+}
+.searcher {
+    border-radius: 8px;
+    border: 1px solid rgb(59, 59, 59);
+    padding: 5px;
+}
+.searcher:focus {
+    outline: none;
 }
 
 .wrapper{
@@ -44,11 +53,41 @@ nav {
     padding: 8px 10px 10px 10px;
 }
 .new-folder {
-    padding: 5px 5px 5px 10px;
+    padding: 5px 3px;
     color: rgb(59, 59, 59);
     border-radius: 8px;
     border: 1px solid rgb(59, 59, 59);
+    width: 80%;
+    cursor: pointer;
+}
+.upload-form {
+    display: flex;
+    flex-direction: column;
+}
+.upload-file {
     width: 100%;
+}
+
+.upload-file::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.upload-file::before {
+    content: 'select your file';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border-radius: 8px;
+    border: 2px solid rgb(59, 59, 59);
+    padding: 5px 3px;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 80%;
+}
+.upload-file:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.upload-file:focus {
+    outline: none;
 }
 
 .wrapper-main{
@@ -72,21 +111,24 @@ nav {
     flex-direction: row;
     width: 100%;
     text-align: center;
+    color: white;
 }
 .nameFolder {
     text-decoration: none;
     width: 61%;
     text-align: left;
     align-self: center;
-    color: white;
 }
 .nameFolder > h2 {
+    color: white;
     font-size: 16px;
+    word-wrap: break-word;
 }
 .nameFolder:focus {
     color: white;
 }
 .icon2 {
+    color: white;
     width: 13%;
     cursor: pointer;
 }
@@ -104,4 +146,13 @@ nav {
     width: 25%;
     /* background-color: #F6921A; */
     opacity: 0.5;
+}
+
+.hide-border{
+    border: none;
+}
+
+.form-display{
+    display: flex;
+    align-items: center;
 }
