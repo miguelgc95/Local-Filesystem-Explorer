@@ -227,3 +227,11 @@ nav {
     padding-left: 6px;
     text-decoration: none;
 }
+
+.click{
+    padding: 5px;
+}
+
+.not-click{
+    pointer-events: none;
+}

@@ -14,7 +14,7 @@ function recursiveTree($dirPath, $aux, $counter){
         if ($value != '.' && $value != '..') {
             if (is_dir($dirPath."/".$value)){
                 echo '<div class="folder-tree" order="'.$counter.'">'
-                . '<i class="fas fa-caret-right"></i>'
+                . '<div class="click"><i class="not-click fas fa-caret-right"></i></div>'
                 . '<a href=?dir=' . urlencode("/".$aux."/".$value) . '><p>' . $value .  '</p></a>' . "\n"
                 . '</div>';
                 recursiveTree($dirPath."/".$value, $value, $counter);
