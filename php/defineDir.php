@@ -18,13 +18,34 @@ if (empty($_POST['searcher'])){
 
 function matchingSearch($myquery, $pattern) {
     $dir = getcwd() . '/root' . $myquery;
-    $folder = scandir($dir);
+
     $folderFiltered = array();
-    echo '<br>';
+    $folderFiltered = recursiveSearch($dir, $pattern, $folderFiltered);
+
+    return $folderFiltered;
+}
+
+function recursiveSearch($dir, $pattern, $folderFiltered){
+    $folder = scandir($dir);
+    echo $dir;
+    echo "<br>";
     foreach($folder as $value){
+        if (is_dir($dir . "/" . $value)){
+            if ($value != "." && $value != ".."){
+                echo $value;
+                echo "<br>";
+                recursiveSearch($dir. "/" . $value, $pattern, $folderFiltered);
+            }
+        }
         if (strpos($value, $pattern) !== false){
+            echo "<br>";
+            echo "no entro ni pal kali cabesaaaaaaaaaa";
+            echo "<br>";
             array_push($folderFiltered, $value);
         }
     }
+    echo "<br>";
+    var_dump($folderFiltered);
+    echo "<br>";
     return $folderFiltered;
 }
