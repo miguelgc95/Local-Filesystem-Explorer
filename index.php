@@ -39,6 +39,7 @@
         ?>
         </section>
         <aside class="wrapper-info">
+
         </aside>
     </section>
 
