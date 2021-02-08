@@ -2,11 +2,12 @@
 
 $semiPath = urldecode($_POST["semiPath"]);
 $dir = "../root$semiPath";
+echo 'dir ' . $dir;
 $parent = "/Local-Filesystem-Explorer/?dir=" . $_POST["parent"];
 
 rrmdir($dir);
-function rrmdir($dir)
-{
+function rrmdir($dir) {
+    echo $dir;
     if (is_file($dir)){
         unlink($dir);
     }elseif(is_dir($dir)){
