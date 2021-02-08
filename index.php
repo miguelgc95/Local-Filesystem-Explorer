@@ -27,6 +27,11 @@
                 require('./php/newFolderButton.php');
                 require('./php/uploadFileButton.php');
             ?>
+            <section class="tree-section">
+            <?php
+                require('./php/tree.php');
+            ?>
+            </section>
         </aside>
         <section class="wrapper-main">
         <?php
