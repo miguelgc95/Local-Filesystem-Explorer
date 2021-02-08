@@ -9,17 +9,16 @@ for ($i = 0; $i < $foldercount; $i++) {
     }
 }
 
-function printMain($folder, $queryParam, $parent)
-{
+function printMain($folder, $queryParam, $parent) {
     $typeIcon = changeIcons($folder);
     echo '<section class="showedFolder">'
         . $typeIcon
         . '<a class="nameFolder" href=?dir=' . $queryParam . '>' . '<h2>' . $folder .  '</h2>' . '</a>' . "\n"
-        . '<p class="icon2">' . '<i class="fas fa-edit"></i>' . '</p>' . "\n"
-        . '<form class="form-display" method="post" action="./php/delete-folder.php">' . "\n"
+        . '<button class="modify-button icon-modify hide-border"  name=' . $queryParam . '>' . '<i class="fas fa-edit"></i></button>' . "\n"
+        . '<form class="form-display delete-form" method="post" action="./php/delete-folder.php">' . "\n"
         . '<input type="hidden" name="semiPath" value=' . $queryParam . '>' . "\n"
         . '<input type="hidden" name="parent" value=' . $parent . '>' . "\n"
-        . '<button type="submit"  class="icon2 hide-border"><i class="fas fa-backspace"></i></button>' . "\n"
+        . '<button type="submit"  class="icon-delete hide-border"><i class="fas fa-backspace"></i></button>' . "\n"
         . '</form>' . "\n"
         . '</section>';
 }

@@ -1,4 +1,5 @@
 <?php
+
 $parent = urlencode($aux);
 echo '<form id="upload-form" class="upload-form" method="post" action="./php/upload.php" enctype="multipart/form-data">' . "\n"
     . '<input type="hidden" name="path" value="'.$myquery.'">' . "\n"
