@@ -3,9 +3,9 @@
 $foldercount = count($folder);
 for ($i = 0; $i < $foldercount; $i++) {
     if ($folder[$i] != '.' && $folder[$i] != '..') {
-        $queryParam = urlencode($aux . '/' . $folder[$i]);
+        $queryParam = urlencode($myquery . '/' . $folder[$i]);
 
-        printMain($folder[$i], $queryParam, urlencode($aux));
+        printMain($folder[$i], $queryParam, urlencode($myquery));
     }
 }
 
