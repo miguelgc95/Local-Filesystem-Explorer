@@ -7,19 +7,24 @@ if (empty($_POST['searcher'])){
         $myquery = '';
     } else {
         $dir = getcwd() . '/root' . urldecode($_GET['dir']);
-        echo $dir;
         $folder = scandir($dir);
         $myquery =$_GET['dir'];
     }
 }else{
     $myquery = $_POST['query'];
-    $folder = matchingSearch($myquery);
+    $pattern = $_POST['searcher'];
+    $folder = matchingSearch($myquery, $pattern);
 }
 
-function matchingSearch($myquery) {
+function matchingSearch($myquery, $pattern) {
     $dir = getcwd() . '/root' . $myquery;
-    echo $dir;
-    $dirdec = getcwd() . '/root' . urldecode($myquery);
-    $folder = scandir($dirdec);
-    return $folder;
+    $folder = scandir($dir);
+    $folderFiltered = array();
+    echo '<br>';
+    foreach($folder as $value){
+        if (strpos($value, $pattern) !== false){
+            array_push($folderFiltered, $value);
+        }
+    }
+    return $folderFiltered;
 }
