@@ -1,5 +1,12 @@
 document.getElementById("new-folder").addEventListener("blur", request);
 document.getElementById("upload-file").addEventListener("change", upload);
+var divOrders = document.querySelectorAll("div[order]");
+
+divOrders.forEach(element => {
+    let margingLeft = element.getAttribute("order")*16 - 16;
+    console.log(margingLeft);
+    element.style.marginLeft= `${margingLeft}px`;
+});
 
 function request() {
     var whereToSave = document.getElementById("new-folder").getAttribute("query");

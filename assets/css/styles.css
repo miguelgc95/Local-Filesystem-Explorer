@@ -214,3 +214,16 @@ nav {
     border-radius: 8px;
     border: none;
 }
+
+.folder-tree {
+    height: 20px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.folder-tree a{
+    padding-left: 6px;
+    text-decoration: none;
+}
