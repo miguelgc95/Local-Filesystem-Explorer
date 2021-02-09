@@ -162,7 +162,7 @@ nav {
     align-items: center;
 }
 .hidden {
-    display: none;
+    display: none !important;
 }
 .modal-content-section {
     width: 65%;

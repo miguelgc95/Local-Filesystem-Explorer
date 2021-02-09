@@ -8,16 +8,45 @@ var clickOrders = document.querySelectorAll(".click");
 divOrders.forEach(element => {
     let margingLeft = element.getAttribute("order")*16 - 16;
     element.style.marginLeft= `${margingLeft}px`;
+    if (element.getAttribute("order")>1){
+        element.classList.add("hidden");
+    }
 });
 
 clickOrders.forEach(element => {
-    console.log(element);
     element.parentNode.addEventListener("click", togAndHide);
 });
 
 function togAndHide(e) {
     e.target.firstChild.classList.toggle("fa-caret-right");
     e.target.firstChild.classList.toggle("fa-caret-down");
+    hideSibling(e.target.parentNode);
+}
+
+function hideSibling(origin) {
+    var treeChilds = document.getElementsByClassName("tree-section")[0].children;
+    let i = 0;
+    let index = 10000;
+    while (i<treeChilds.length) {
+        console.log(treeChilds[i]);
+        console.log(origin.getAttribute("order"));
+        console.log(treeChilds[i].getAttribute("order"));
+        if (origin.getAttribute("me") == treeChilds[i].getAttribute("me")){
+            index = i;
+
+        console.log(origin.getAttribute("me"));
+        console.log(treeChilds[i].getAttribute("me"));
+        }
+        if (i>index && origin.getAttribute("order")<treeChilds[i].getAttribute("order")){
+            treeChilds[i].classList.toggle("hidden");
+        }else if (i>index && origin.getAttribute("order") >= treeChilds[i].getAttribute("order")) {
+
+        console.log(index);
+        console.log(i);
+            break;
+        }
+        i++;
+    }
 }
 
 function request() {

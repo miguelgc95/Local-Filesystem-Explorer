@@ -13,16 +13,18 @@ function recursiveTree($dirPath, $aux, $counter){
     foreach ($dirContent as $value){
         if ($value != '.' && $value != '..') {
             if (is_dir($dirPath."/".$value)){
-                echo '<div class="folder-tree" order="'.$counter.'">'
+                echo '<div class="folder-tree" me="'. $value .'" parent="'. $dirPath .'" order="'.$counter.'">'
                 . '<div class="click"><i class="not-click fas fa-caret-right"></i></div>'
                 . '<a href=?dir=' . urlencode("/".$aux."/".$value) . '><p>' . $value .  '</p></a>' . "\n"
                 . '</div>';
                 recursiveTree($dirPath."/".$value, $value, $counter);
-            }else{
-                echo '<div class="folder-tree" order="'.$counter.'">'
-                . '<span  href=?dir=' . urlencode("/".$aux."/".$value) . '><p>' . $value .  '</p></span>' . "\n"
-                . '</div>';
             }
+            //else{
+            //    echo '<div class="folder-tree" order="'.$counter.'">'
+            //    . '<div></div>'
+            //    . '<span  href=?dir=' . urlencode("/".$aux."/".$value) . '><p>' . $value .  '</p></span>' . "\n"
+            //    . '</div>';
+            //}
         }
     }
     $counter--;
