@@ -28,21 +28,14 @@ function hideSibling(origin) {
     let i = 0;
     let index = 10000;
     while (i<treeChilds.length) {
-        console.log(treeChilds[i]);
         console.log(origin.getAttribute("order"));
         console.log(treeChilds[i].getAttribute("order"));
         if (origin.getAttribute("me") == treeChilds[i].getAttribute("me")){
             index = i;
-
-        console.log(origin.getAttribute("me"));
-        console.log(treeChilds[i].getAttribute("me"));
         }
-        if (i>index && origin.getAttribute("order")<treeChilds[i].getAttribute("order")){
+        if (i>index && parseInt(treeChilds[i].getAttribute("order"))===parseInt(origin.getAttribute("order"))+1){
             treeChilds[i].classList.toggle("hidden");
-        }else if (i>index && origin.getAttribute("order") >= treeChilds[i].getAttribute("order")) {
-
-        console.log(index);
-        console.log(i);
+        }else if (i>index && origin.getAttribute("order") === treeChilds[i].getAttribute("order")) {
             break;
         }
         i++;
