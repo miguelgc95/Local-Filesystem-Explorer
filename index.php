@@ -38,9 +38,6 @@
             require('./php/showFiles.php');
         ?>
         </section>
-        <aside class="wrapper-info">
-
-        </aside>
     </section>
 
 </body>
