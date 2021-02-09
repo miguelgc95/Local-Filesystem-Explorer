@@ -10,6 +10,8 @@ body{
     height: 100%;
     background-image: url("./img/background.png");
     background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
@@ -40,8 +42,8 @@ nav {
 }
 
 .wrapper-tree{
-    width: 25%;
-    padding: 8px 10px 10px 10px;
+    width: 28%;
+    padding: 8px 10px 10px 20px;
 }
 .new-folder {
     padding: 5px 3px;
@@ -82,7 +84,7 @@ nav {
 }
 
 .wrapper-main{
-    width: 50%;
+    width: 72%;
     overflow-y: scroll;
     font-size: 14px;
 }
@@ -143,11 +145,6 @@ nav {
     border: none;
 }
 
-.wrapper-info{
-    width: 25%;
-    opacity: 0.5;
-}
-
 /* Modal section */
 .modal-section {
     background-color: rgba(246, 146, 26, 0.5);
@@ -162,7 +159,7 @@ nav {
     align-items: center;
 }
 .hidden {
-    display: none;
+    display: none !important;
 }
 .modal-content-section {
     width: 65%;
@@ -213,4 +210,31 @@ nav {
     padding: 5px;
     border-radius: 8px;
     border: none;
+}
+
+.folder-tree {
+    height: 20px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.folder-tree a{
+    padding-left: 6px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.click{
+    padding: 5px;
+}
+
+.not-click{
+    pointer-events: none;
+}
+
+.tree-section{
+    padding-top: 30px;
+    padding-left: 30px;
 }

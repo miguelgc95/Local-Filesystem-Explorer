@@ -27,14 +27,17 @@
                 require('./php/newFolderButton.php');
                 require('./php/uploadFileButton.php');
             ?>
+            <section class="tree-section">
+            <?php
+                require('./php/tree.php');
+            ?>
+            </section>
         </aside>
         <section class="wrapper-main">
         <?php
             require('./php/showFiles.php');
         ?>
         </section>
-        <aside class="wrapper-info">
-        </aside>
     </section>
 
 </body>
